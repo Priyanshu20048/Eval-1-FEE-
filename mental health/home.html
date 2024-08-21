@@ -7,28 +7,110 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-image: url('images17');
-            background-repeat: no-repeat;
+            overflow-x: hidden;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f8ff;
+            background-image: url('wp2386912.webp');
             background-size: cover;
+            background-position: center;
             background-attachment: fixed;
         }
+        .navbar {
+            background-color: #2b6777;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .welcome-box {
+            position: relative;
+            left: 0;
+            background-color: rgba(74, 124, 148, 0.9);
+            color: white;
+            padding: 50px;
+            width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: left 0.5s ease-in-out;
+        }
+
+        .welcome-box:hover {
+            left: 30px;
+        }
+
+        .welcome-box h1 {
+            font-size: 40px;
+            font-weight: 600;
+            margin: 0 0 15px;
+        }
+
+        .welcome-box p {
+            font-size: 25px;
+            margin: 0 0 25px;
+        }
+
+        .welcome-box button {
+            padding: 12px 25px;
+            background-color: #2b6777;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .welcome-box button:hover {
+            background-color: #3c8ea6;
+        }
+
+       main{
+        background-color: hsl(208, 68%, 77%);
+       }
         .quote {
             text-align: center;
             font-size: 30px;
             margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
         }
-        .profile-section {
+        .profile-section, .mood-tracker-section, .active-streak-section {
             text-align: center;
-            margin: 20px 0;
+            margin-left: 30px ;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .profile-img, .streak-img, .mood-img {
-            width: 150px;
+            width: 140px;
             height: 150px;
-            border-radius: 50%;
+            border-radius: 70%;
             cursor: pointer;
             display: block;
             margin: 0 auto;
+        }
+        .profile-section:hover, .mood-tracker-section:hover, .active-streak-section:hover {
+            transform: scale(1.1);
+            box-shadow: 8px 8px  4px 8px rgba(0, 0, 0, 0.3);
         }
         .sidebar {
             width: 250px;
@@ -36,43 +118,61 @@
             padding: 20px;
             position: fixed;
             top: 0;
-            left: -300px; /* Hidden by default */
+            left: -250px; 
             height: 100%;
             transition: left 0.3s ease-in-out;
         }
         .sidebar:target {
-            left: 0; /* Sidebar will be shown */
+            left: 0; 
         }
         .close-btn {
             display: block;
             margin-bottom: 20px;
             text-align: right;
+            font-size: 24px;
+            cursor: pointer;
         }
         .card-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+            grid-template-columns: repeat(2, 1fr); 
             gap: 20px;
             padding: 20px;
+            width:600px;
         }
-        .spotify-section, .chatbox {
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .right-side {
             margin-top: 20px;
-            padding: 20px;
+        }
+        .spotify-section, .chatbox, .blog-btn {
+            margin-top: 20px;
+            padding: 5px;
             background-color: #f1f1f1;
             border-radius: 10px;
-        }
-        .blog-btn{
-            margin-top: 20px;
-            padding: 20px;
-            background-color:#6394ee;
-            border-radius: 10px;
-            width:310px;
-            height:50px;
+            margin-right: 20px;
         }
         .spotify-section img {
-            max-width: 100%;
+            max-width: 80%;
             display: block;
             margin: 0 auto;
             border-radius: 20px;
+        }
+        .blog-btn {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #6394ee;
+            border-radius: 10px;
+            width: 95%;
+            margin-right:20px;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
         }
         .chatbox h5 {
             margin-bottom: 15px;
@@ -80,47 +180,183 @@
         .chatbox .form-control {
             margin-bottom: 10px;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .cards,
+    .blog-posts {
+        flex-direction: column;
+    }
+
+    /* Blog Section */
+.blog {
+    background:  #6394ee;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.blog h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.blog-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px;
+    flex: 1 1 calc(33.333% - 30px);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.blog-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.blog-card a {
+    color: #fda085;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.blog-card a:hover {
+    color: #333;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+.contact {
+    background-image: url('wp2386912.webp');
+    background-repeat: no-repeat;
+    background-size:size;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    background: #444;
+    color: #fff;
+}
+
+.contact-form button {
+    background: #fda085;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #fff;
+    color: #fda085;
+}
+
+/* Footer Section */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .footer-social a {
+    color: #fff;
+    font-size: 1.2em;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+footer .footer-social a:hover {
+    color: #fda085;
+}
+
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Product</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">Mental Health</a>
         </div>
-    </nav>
-
-    <!-- Quote -->
-    <div class="quote">
-        "❀ꗥ～ꗥ❀ 𝐓𝐡𝐞𝐫𝐞 𝐢𝐬 𝐚 𝐡𝐨𝐩𝐞 𝐞𝐯𝐞𝐧 𝐲𝐨𝐮𝐫 𝐛𝐫𝐚𝐢𝐧 𝐭𝐞𝐥𝐥𝐬 𝐲𝐨𝐮 𝐭𝐡𝐞𝐫𝐞 𝐢𝐬 𝐧𝐨𝐭! ❀ꗥ～ꗥ❀"
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
     </div>
 
-    <!-- Main Layout -->
-    <div class="container-fluid">
+    <div class="container">
+        <div class="welcome-box">
+            <h1>Welcome to Our Mental Health Website</h1>
+            <p>"Taking care of your mind is as important as taking care of your body."</p>
+            <button>Visit</button>
+        </div>
+       
+    </div>
+     
+    <main>
+    <div class="quote">
+        'There is a hope even your brain tells you there is not' — Anonymous
+    </div>
+
+   
+    <div>
         <div class="row">
-            <!-- Left Sidebars -->
+
             <div class="col-lg-3">
-                <!-- Profile Section -->
+    
                 <div class="profile-section">
                     <a href="#streakSidebar">
                         <img src="profile.JPG" alt="Profile Image" class="profile-img">
@@ -128,16 +364,16 @@
                     <p>Profile</p>
                 </div>
 
-                <!-- Active Streak Section -->
-                <div class="profile-section">
+            
+                <div class="active-streak-section">
                     <a href="#streakSidebar">
                         <img src="images.png" alt="Active Streak" class="streak-img">
                     </a>
                     <p>Active Streak</p>
                 </div>
 
-                <!-- Mood Tracker Section -->
-                <div class="profile-section">
+    
+                <div class="mood-tracker-section">
                     <a href="#moodSidebar">
                         <img src="mood.jpg" alt="Mood Tracker" class="mood-img">
                     </a>
@@ -145,59 +381,59 @@
                 </div>
             </div>
 
-            <!-- Middle Content -->
+
             <div class="col-lg-6">
                 <div class="card-container">
-                    <!-- Card 1 -->
-                    <div class="card" style="width: 18rem;">
-                        <img src="doctor appoinment.png" class="card-img-top" alt="Card 1 Image" height="200px">
+    
+                    <div class="card">
+                       
                         <div class="card-body">
                             <h5 class="card-title">Appointment</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                    <!-- Card 2 -->
-                    <div class="card" style="width: 18rem;">
-                        <img src="Exercise_Mental_Health.png" class="card-img-top" alt="image2" height="200px">
+        
+                    <div class="card">
+                        
                         <div class="card-body">
                             <h5 class="card-title">Exercises</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                    <!-- Card 3 -->
-                    <div class="card" style="width: 18rem;">
-                        <img src="article.jpg" class="card-img-top" alt="Card 3 Image" height="200px">
+                    
+                    <div class="card">
+                      
                         <div class="card-body">
                             <h5 class="card-title">Article</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                    <!-- Card 4 -->
-                    <div class="card" style="width: 18rem;">
-                        <img src="dailyquote.jpg" class="card-img-top" alt="Card 4 Image" height="200px">
+                
+                    <div class="card">
+                       
                         <div class="card-body">
                             <h5 class="card-title">Daily Quote</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="https://www.news-medical.net/condition/Mental-Health" class="btn btn-primary">Go</a>
                         </div>
                     </div>
-                    <!-- Card 5 -->
-                    <div class="card" style="width: 18rem;">
-                        <img src="hq720.jpg" class="card-img-top" alt="Card 5 Image" height="200px">
+                    
+                    <div class="card">
+                       
                         <div class="card-body">
                             <h5 class="card-title">Live Session</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="youtuve.html" class="btn btn-primary">Go</a>
                         </div>
                     </div>
-                    <!-- Card 6 -->
-                    <div class="card" style="width: 18rem;">
-                        <img src="Product-in-Marketing.webp" class="card-img-top" alt="Card 6 Image" height="200px">
+
+                    <div class="card">
+                      
                         <div class="card-body">
-                            <h5 class="card-title">Products</h5>
+                            <h5 class="card-title">Consultation</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
@@ -205,46 +441,120 @@
                 </div>
             </div>
 
-            <!-- Right Side Content -->
-            <div class="col-lg-3">
-                <!-- Spotify Section -->
+
+            <div class="col-lg-3 right-side">
                 <div class="spotify-section">
-                   <a href="https://open.spotify.com/section/0JQ5DAuChZYPe9iDhh2mJz"> <img src="spotify.png" alt="Spotify Image" class="img-fluid"></a>
-                    <a href="https://open.spotify.com/section/0JQ5DAuChZYPe9iDhh2mJz" target="_blank">Listen on Spotify</a>
+                    <a href="https://open.spotify.com/track/7rOZCzJm4sA1n5Y9Crcz8v3f9W" target="_blank">
+                        <img src="spotify.png" alt="Spotify" >
+                    </a>
                 </div>
 
-                <!-- Blog Button -->
-                <a href="blog.html" class="btn btn-primary blog-btn">Go to Blog</a>
-
-                <!-- Chatbox -->
                 <div class="chatbox">
                     <h5>Let's Chat</h5>
-                    <input type="text" class="form-control" placeholder="Hello">
-                    <input type="text" class="form-control" placeholder="Type a message">
-                    <button class="btn btn-primary w-100 mt-2">Send</button>
+                    <form>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3" placeholder="Hello"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
                 </div>
+
+
+            
+                <a href="https://example-blog.com" class="blog-btn" target="_blank">Visit Our Blog</a>
             </div>
         </div>
     </div>
 
-    <!-- Sidebars -->
+    
     <div id="streakSidebar" class="sidebar">
         <a href="#" class="close-btn">&times;</a>
-        <h4>Active Streak</h4>
-        <div class="mb-3">
-            <p>Active Streak: X Days</p>
-        </div>
+        <h4>Active Streaks</h4>
+        <form>
+            <div class="mb-3">
+                <label for="streakName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="streakName" placeholder="Enter streak name">
+            </div>
+            <div class="mb-3">
+                <label for="streakDescription" class="form-label">Description</label>
+                <textarea class="form-control" id="streakDescription" rows="3" placeholder="Describe the streak"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
     </div>
 
+    
     <div id="moodSidebar" class="sidebar">
         <a href="#" class="close-btn">&times;</a>
         <h4>Mood Tracker</h4>
-        <div class="mb-3">
-            <p>Mood: Happy</p>
+        <form>
+            <div class="mb-3">
+                <label for="moodDate" class="form-label">Date</label>
+                <input type="date" class="form-control" id="moodDate">
+            </div>
+            <div class="mb-3">
+                <label for="moodDescription" class="form-label">Mood</label>
+                <textarea class="form-control" id="moodDescription" rows="3" placeholder="Describe your mood"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+    </main>
+
+
+
+<!-- Blog Section -->
+<section id="blog" class="blog">
+    <h2>Our Latest Blog Posts</h2>
+    <div class="blog-posts">
+        <div class="blog-card">
+            <h3>10 Ways to Manage Stress</h3>
+            <p>Explore effective strategies to manage stress in your daily life.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+            <h3>Understanding Anxiety</h3>
+            <p>Learn about anxiety, its causes, and how to cope with it.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="blog-card">
+            <h3>Mental Health Myths</h3>
+            <p>Debunk common myths surrounding mental health.</p>
+            <a href="#">Read More</a>
         </div>
     </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+</main>
+
+<!-- Footer Section -->
+<footer>
+<div class="footer-content">
+    <p>&copy; 2024 Mental Health Hub | All Rights Reserved</p>
+    <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+</div>
+</footer>
 
 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+
