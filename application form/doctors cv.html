@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="cv.css">
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
 </head>
 <body>
-    Make your contributions for humanity 
+   
     <div class ="container">
-        <h1 class = "form-titles">Application Job For Doctor </h1>
-        <br>
-        <br> 
+        
+        
         <form action="#" autocomplete="on">
-            <fieldset><!--used for group of related data-->
-                <legend>
+            <h1 class = "form-titles">Application Job For Doctor </h1>
+            <br>
+            <!--fieldset-used for group of related data-->
 
-            
-            <h1 class="form-title">Personal Information </h1></legend>
+            <h1 class="form-title">Personal Information </h1>
             <div class="main-user-info">
 
                 <div class ="user-input-box">
@@ -176,21 +176,21 @@
             <legend> Fellowship  Program</legend>
 
         <div class ="user-input-box">
-            <label for ="Inst3"> Institution Name  </label>
-            <input type="text" id="Inst3"
-            name="Inst3"
+            <label for ="Inst4"> Institution Name  </label>
+            <input type="text" id="Inst4"
+            name="Inst4"
             placeholder="Institution Name"/>
         </div>
         <div class ="user-input-box">
-            <label for ="Loc3"> Location  </label>
-            <input type="text" id="Loc3"
-            name="Loc3"
+            <label for ="Loc4"> Location  </label>
+            <input type="text" id="Loc4"
+            name="Loc4"
             placeholder="Location"/>
         </div>
         <div class ="user-input-box">
-            <label for ="year3"> Graduation year  </label>
-            <input type="number" id="year3"
-            name="year3" size="4" maxlength="4"
+            <label for ="year4"> Graduation year  </label>
+            <input type="number" id="year4"
+            name="year4" size="4" maxlength="4"
             placeholder="Graduation Year"/>
         </div>
 </fieldset>
@@ -211,39 +211,48 @@
     placeholder="License Number"/>
 </div>
 <div class ="user-input-box">
-    <label for ="year4"> Expiration year  </label>
-    <input type="number" id="year4"
-    name="year4" size="4" maxlength="4"
+    <label for ="year5"> Expiration year  </label>
+    <input type="number" id="year5"
+    name="year5" size="4" maxlength="4"
     placeholder="Expiration Year"/>
 </div>
 </fieldset>
-<div class ="user-input-box">
-    <label for ="Area"> Areas of Expertise  </label>
+<fieldset>
+    <legend>Areas of Expertise  </legend>
     <textarea id = "Area"
-    name="Area" rol="4" col="5"
-    placeholder="Your Experience or nay other Soft skills "></textarea>
-</div>
+    name="Area" rows="18" cols="40"
+    placeholder="Your Experience or any other Soft skills "></textarea>
+</fieldset>
+
 <div class ="user-input-box">
     <label for ="proof"> Please Attach all your proofs  </label>
     <input type="file" id="proof"
-    name="proof">
+    name="proof" multiple >
 </div>
 
-
-
-
-
-
+<div class ="user-input-box">
+    <label for="work">Availabilty</label>
+    <select name = "Work-time" id="work">
+    <option value="Full-time">Full-Time</option>
+    <option value="Half-time">Half-Time</option>
+    <option value="Shifts" selected>Shifts</option>
+  </select>
+  </div>
+  <div class="form-submit-btn">
+    <input type="reset" value="Reset">
+</div>
+ 
+            <div class = "user-input-box"></div>
             <div class="form-submit-btn">
                 <input type="submit" value="Apply">
             </div>
-            <div class="form-submit-btn">
-                <input type="reset" value="Reset">
-            </div>
+            
         </form>
     </div>
 </body>
 </html>
+
+
 <!--1. first name 
 2. last Name
 3. Father's name
