@@ -73,110 +73,77 @@ div form{
 }
 
 .services{
-    width: 80%;
+    width: 60%;
     margin: auto;
     text-align: center;
-    padding-top: 100px;
-}
-h1{
-    font-size: 36px;
-    font-weight: 600;
+    padding-top: 50px;
 }
 
-p{
+.support{
+    background-color: blueviolet;
+    border-radius: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    padding: 10px 0;
+    box-sizing:border-box;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 400;
+}
+
+
+/* p{
     color: blue;
     font-size: 14px;
     font-weight: 300;
-    line-height: 22px;
+    line-height: 22px; 
     padding: 10px;
-}
+} */
 
 .row{
     margin-top: 5%;
-    display: flex;
-    justify-content: space-between;
 }
 
 .services-col{
-    flex-basis: 41%;
-    background:skyblue;
+   /* flex-basis: 41%;*/
+    background-color: white;
     border-radius: 10px;
     margin-bottom: 4%;
     margin-left: 4%;
     margin-right: 4%;
-    padding: 40px 0;
+    padding: 10px 0;
     box-sizing:border-box;
 }
 
+
 .services h3{
-    margin-top: 20%;
-    text-align:left; 
-    font-weight: 500;
-    margin: 10px 10px;
-    text-decoration: none;
+    text-align:center; 
+    font-weight: 300;
+    margin: 10px 0;
+    text-decoration:none;
+    color: black;
 }
 
 .services p{
-    text-align: left;
-    text-align-last:left;
+    text-align: center;
     text-decoration: none;
 }
 
 .services-col:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.6);
 }
 
 .other{
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
-.other-col{
-    flex-basis: 32%;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
-}
-
-.other-col img{
-    width: 65%;
-    height: 65%;
-    display:flex ;
-}
-
-.layer{
-    background: transparent;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.5s;
-}
-(/*transition in this*/)
-.layer:hover{
-    background: rgba(226,0,0,0.7);
-}
-
-.layer h3{
-    width: 100%;
-    font-weight: 500;
-    color: aliceblue;
-    font-size: 26px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    transition: 0.5s;
-}
-
-.layer:hover h3{
-    bottom: 49%;
-    opacity: 1;
-}
 
 .more{
     width: 80%;
