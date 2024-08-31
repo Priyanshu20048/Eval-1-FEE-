@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+<head> </head>
+
+<body>
+
+<div class="quiz-container">
+
+<h1 class="animate_animated animate_fadeInDown">Anxiety Test</h1>
+
+ <form> </form>
+
+</div>
+
+</body>
+
+</html>
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://i.pinimg.com/474x/ad/f8/48/adf8483dafea80a3ac77f77002ba1981.jpg");
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.quiz-container {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color:rgb(241, 199, 220);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #56234b;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    animation: fadeInDown;
+    animation-duration: 10s;
+    animation-iteration-count: 2;
+}
+
+.question h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    margin-top: 5%;
+    color: rgb(76, 4, 68);
+}
+
+label {
+    color: rgb(161, 81, 144);
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+   
+}
+
+/* Submit Button */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #966076;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 5%;
+}
+
+button:hover {
+    background-color: #471f38;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .quiz-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .question h2 {
+        font-size: 1rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px;
+    }
