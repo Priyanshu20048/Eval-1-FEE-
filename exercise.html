@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Interactive Card Deck</title>
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            background-image: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #ff9a9e);
+           
+            font-family: 'Courgette', cursive;
+            overflow-y: scroll; /* Add scroll for overflow */
+        }
+        .deck {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 100%;
+            max-height: 90vh; /* Adjust height to fit within viewport */
+            /* Allow scrolling if needed */
+            padding: 20px;
+            box-sizing: border-box;
+            justify-content: center;
+        }
+        .card {
+            width: 250px;
+            height: 370px;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.6s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card-front {
+            background: #fff;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .card-back {
+            background: #f0f0f0;
+            color: #0a0a0a;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            overflow: auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select a Yoga Pose Card</h1>
+    <div class="deck">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="yoga1.jpg" alt="Yoga Pose 1">
+                </div>
+                <div class="card-back">
+                    <p>Pose: Mountain Pose</p>
+                    <p>Step 1: Stand tall with feet together.</p>
+                    <p>Step 2: Press your weight evenly across your feet.</p>
+                    <p>Step 3: Reach your arms overhead.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="yoga2.jpg" alt="Yoga Pose 2">
+                </div>
+                <div class="card-back">
+                    <p>Pose: Downward Dog</p>
+                    <p>Step 1: Start on your hands and knees.</p>
+                    <p>Step 2: Lift your hips towards the ceiling.</p>
+                    <p>Step 3: Straighten your legs and hold.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="yoga3.jpg" alt="Yoga Pose 3">
+                </div>
+                <div class="card-back">
+                    <p>Pose: Warrior I</p>
+                    <p>Step 1: Step one foot forward into a lunge.</p>
+                    <p>Step 2: Raise your arms above your head.</p>
+                    <p>Step 3: Hold and breathe deeply.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="yoga4.jpg" alt="Yoga Pose 4">
+                </div>
+                <div class="card-back">
+                    <p>Pose: Tree Pose</p>
+                    <p>Step 1: Stand on one foot.</p>
+                    <p>Step 2: Place the other foot on your inner thigh.</p>
+                    <p>Step 3: Bring your hands to prayer position.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="yoga5.jpg" alt="Yoga Pose 5">
+                </div>
+                <div class="card-back">
+                    <p>Pose: Child's Pose</p>
+                    <p>Step 1: Kneel on the floor.</p>
+                    <p>Step 2: Sit back on your heels.</p>
+                    <p>Step 3: Lower your torso between your knees.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="yoga6.jpg" alt="Yoga Pose 6">
+                </div>
+                <div class="card-back">
+                    <p>Pose: Bridge Pose</p>
+                    <p>Step 1: Lie on your back with knees bent.</p>
+                    <p>Step 2: Lift your hips towards the ceiling.</p>
+                    <p>Step 3: Hold and breathe deeply.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="yoga7.jpg" alt="Yoga Pose 7">
+                </div>
+                <div class="card-back">
+                    <p>Pose: Cobra Pose</p>
+                    <p>Step 1: Lie on your stomach.</p>
+                    <p>Step 2: Place your hands under your shoulders.</p>
+                    <p>Step 3: Lift your chest off the floor.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="yoga8.jpg" alt="Yoga Pose 8">
+                </div>
+                <div class="card-back">
+                    <p>Pose: Seated Forward Bend</p>
+                    <p>Step 1: Sit with legs extended.</p>
+                    <p>Step 2: Reach forward to touch your toes.</p>
+                    <p>Step 3: Hold the pose and relax.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="yoga9.jpg" alt="Yoga Pose 9">
+                </div>
+                <div class="card-back">
+                    <p>Pose: Plank Pose</p>
+                    <p>Step 1: Start in a push-up position.</p>
+                    <p>Step 2: Hold your body in a straight line.</p>
+                    <p>Step 3: Engage your core muscles.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="yoga10.jpg" alt="Yoga Pose 10">
+                </div>
+                <div class="card-back">
+                    <p>Pose: Cat-Cow Pose</p>
+                    <p>Step 1: Start on hands and knees.</p>
+                    <p>Step 2: Alternate arching and rounding your back.</p>
+                    <p>Step 3: Synchronize your breath with the movements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
