@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webpage Layout</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <style>
         body {
+            position: relative;
             overflow-x: hidden;
             margin: 0;
             font-family: 'Open Sans', sans-serif;
-            background-color: #f0f8ff;
-            background-image: url('wp2386912.webp');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-image: url('https://img.freepik.com/premium-photo/ink-blot-art-high-resolution-man39s-face-mental-health-awareness-concept-mental-health-awareness-ink-blot-art-high-resolution-man39s-face_864588-126410.jpg');
+            background-size:100% 55% ;
+            background-repeat: no-repeat;
+           
+           
+            
+           
         }
         .navbar {
             background-color: #2b6777;
@@ -22,7 +33,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .navbar a {
@@ -87,7 +98,7 @@
         }
 
        main{
-        background-color: hsl(208, 68%, 77%);
+        background-color: hsl(209, 47%, 91%);
        }
         .quote {
             text-align: center;
@@ -112,19 +123,47 @@
             transform: scale(1.1);
             box-shadow: 8px 8px  4px 8px rgba(0, 0, 0, 0.3);
         }
-        .sidebar {
-            width: 250px;
+        .sidebar {   
+            width: 270px;
             background-color: #f8f9fa;
             padding: 20px;
             position: fixed;
             top: 0;
-            left: -250px; 
+            left: -270px; 
             height: 100%;
             transition: left 0.3s ease-in-out;
         }
-        .sidebar:target {
-            left: 0; 
+
+        #profileSidebar:target{
+            left: 0;
         }
+        .sidebar h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #2b6777;
+}
+
+.sidebar p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.sidebar p strong {
+    font-weight: 600;
+    color: #2b6777;
+}
+
+        #streakSidebar:target {
+          left: 0;
+           }
+
+             #moodSidebar:target {
+             left: 0;
+
+            }
+            
         .close-btn {
             display: block;
             margin-bottom: 20px;
@@ -156,11 +195,21 @@
             border-radius: 10px;
             margin-right: 20px;
         }
+        .spotify-section:hover{
+            background-color: hsl(0, 79%, 85%);
+        }
         .spotify-section img {
             max-width: 80%;
             display: block;
             margin: 0 auto;
             border-radius: 20px;
+        }
+        .spotify-section img:hover{
+            transform: scale(1.1);
+        }
+        .chatbox:hover{
+            background-color: hsl(0, 79%, 85%);
+            transform: scale(1.1);
         }
         .blog-btn {
             margin-top: 20px;
@@ -173,6 +222,10 @@
             color: #fff;
             text-decoration: none;
             display: inline-block;
+        }
+        .blog-btn:hover{
+            background-color: hwb(229 2% 66%);
+            transform: scale(1.1);
         }
         .chatbox h5 {
             margin-bottom: 15px;
@@ -190,137 +243,43 @@
         flex-direction: column;
     }
 
-    /* Blog Section */
-.blog {
-    background:  #6394ee;
-    padding: 50px 20px;
-    text-align: center;
-}
+    
 
-.blog h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
+.moodtracker {
+            background-image: linear-gradient( #ff9a9e, #fad0c4);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            max-height: 600px;
+            overflow-y: auto;
+            margin-top: 0%;
+            padding-bottom: 40px;
+        }
 
-.blog-posts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+        .moodtracker img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
 
-.blog-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 15px;
-    flex: 1 1 calc(33.333% - 30px);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.blog-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}
-
-.blog-card p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.blog-card a {
-    color: #fda085;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.blog-card a:hover {
-    color: #333;
-}
-
-.blog-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Contact Section */
-.contact {
-    background-image: url('wp2386912.webp');
-    background-repeat: no-repeat;
-    background-size:size;
-    color: #fff;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    background: #444;
-    color: #fff;
-}
-
-.contact-form button {
-    background: #fda085;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    transition: background 0.3s ease;
-}
-
-.contact-form button:hover {
-    background: #fff;
-    color: #fda085;
-}
-
-/* Footer Section */
-footer {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
-
-footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-footer .footer-social a {
-    color: #fff;
-    font-size: 1.2em;
-    margin-left: 10px;
-    transition: color 0.3s ease;
-}
-
-footer .footer-social a:hover {
-    color: #fda085;
-}
-
+        .moodtracker .mood-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .mood-item:hover{
+         background-color: #82d6f0;
+        }
+        .moodtracker h4 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .moodtracker .date-picker {
+            margin-bottom: 20px;
+        }
+        .moodtracker .btn-submit {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -339,7 +298,7 @@ footer .footer-social a:hover {
 
     <div class="container">
         <div class="welcome-box">
-            <h1>Welcome to Our Mental Health Website</h1>
+            <h1>WELCOME BACK!</h1>
             <p>"Taking care of your mind is as important as taking care of your body."</p>
             <button>Visit</button>
         </div>
@@ -358,8 +317,8 @@ footer .footer-social a:hover {
             <div class="col-lg-3">
     
                 <div class="profile-section">
-                    <a href="#streakSidebar">
-                        <img src="profile.JPG" alt="Profile Image" class="profile-img">
+                    <a href="#profileSidebar">
+                        <img src="https://i.pinimg.com/564x/02/ab/66/02ab661562e562e3a65f39f8b7f34861.jpg" alt="Profile Image" class="profile-img">
                     </a>
                     <p>Profile</p>
                 </div>
@@ -387,62 +346,62 @@ footer .footer-social a:hover {
     
                     <div class="card">
                        
-                        <div class="card-body">
+                        <div class="card-body" style="background-image:url('https://i.pinimg.com/564x/bd/81/5a/bd815a2c0286360289830532801e42a3.jpg');">
                             <h5 class="card-title">Appointment</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <p class="card-text">Schedule a session with a mental health professional.</p>
+                            <a href="appointment.html" class="btn btn-primary">Visit</a>
                         </div>
                     </div>
         
                     <div class="card">
                         
-                        <div class="card-body">
-                            <h5 class="card-title">Exercises</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div class="card-body" style="background-image: url('https://i.pinimg.com/236x/ac/be/51/acbe510710b808fea39336ceaaabf0b3.jpg');">
+                            <h5 class="card-title">Our Product</h5>
+                            <p class="card-text">Learn exercises that can help improve your mental well-being.</p>
+                            <a href="#" class="btn btn-primary">Visit</a>
                         </div>
                     </div>
                     
                     <div class="card">
                       
-                        <div class="card-body">
-                            <h5 class="card-title">Article</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div class="card-body" style="background-image: url('https://i.pinimg.com/236x/15/ac/f5/15acf54ab508a50af0e8ec494e5b26d6.jpg');">
+                            <h5 class="card-title">News</h5>
+                            <p class="card-text">read news from 2000 to current date.</p>
+                            <a href="#" class="btn btn-primary">Visit</a>
                         </div>
                     </div>
                 
                     <div class="card">
                        
-                        <div class="card-body">
+                        <div class="card-body" style="background-image: url('https://i.pinimg.com/236x/1a/18/aa/1a18aa11d435a6de05b317ce0d6e09db.jpg');">
                             <h5 class="card-title">Daily Quote</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="https://www.news-medical.net/condition/Mental-Health" class="btn btn-primary">Go</a>
+                            <p class="card-text">Read new quote everyday and mark as done .</p>
+                            <a href="quote.html" class="btn btn-primary">Visit</a>
                         </div>
                     </div>
                     
                     <div class="card">
                        
-                        <div class="card-body">
-                            <h5 class="card-title">Live Session</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="youtuve.html" class="btn btn-primary">Go</a>
+                        <div class="card-body" style="background-image: url('https://i.pinimg.com/236x/15/23/77/1523773c226f984d4a83b0a2f427ce87.jpg')">
+                            <h5 class="card-title">Therapy</h5>
+                            <p class="card-text">Attend our Therapy session and know about new disease.</p>
+                            <a href="youtuve.html" class="btn btn-primary">Visit</a>
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card" style="background-image: url('https://i.pinimg.com/474x/18/30/bc/1830bc56ba2b6ff9ab85eb34e883c1c4.jpg');">
                       
                         <div class="card-body">
-                            <h5 class="card-title">Consultation</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h5 class="card-title">Breathing exercise</h5>
+                            <p class="card-text">Get relief by pratising breathing exercise.</p>
+                            <a href="#" class="btn btn-primary">Visit</a>
                         </div>
                     </div>
                 </div>
             </div>
 
 
-            <div class="col-lg-3 right-side">
+            <div class="col-lg-3 ">
                 <div class="spotify-section">
                     <a href="https://open.spotify.com/track/7rOZCzJm4sA1n5Y9Crcz8v3f9W" target="_blank">
                         <img src="spotify.png" alt="Spotify" >
@@ -452,109 +411,86 @@ footer .footer-social a:hover {
                 <div class="chatbox">
                     <h5>Let's Chat</h5>
                     <form>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="3" placeholder="Hello"></textarea>
+                        <div>
+                            <textarea rows="3" placeholder="Hello"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
                 </div>
-
-
-            
-                <a href="https://example-blog.com" class="blog-btn" target="_blank">Visit Our Blog</a>
+                <a href="" class="blog-btn" target="_blank">Visit Our Blog</a>
             </div>
         </div>
     </div>
+      
 
+    <div class="sidebar" id="profileSidebar">
+        <a href="#" class="close-btn">&times;</a>
+        <h3>Profile Information</h3>
+        <p><strong>Name:</strong> [Your Name]</p>
+        <p><strong>Birthday:</strong> [Your Birthday]</p>
+        <p><strong>Gender:</strong> [Your Gender]</p>
+        <p><strong>Contact No:</strong> [Your Contact Number]</p>
+        <p><strong>Current Medication:</strong> [Your Current Medication]</p>
+        <p><strong>Counselor Name:</strong> [Your Counselor's Name]</p>
+        <p><strong>Therapist Name:</strong> [Your Therapist's Name]</p>
+    </div>
     
     <div id="streakSidebar" class="sidebar">
         <a href="#" class="close-btn">&times;</a>
         <h4>Active Streaks</h4>
         <form>
-            <div class="mb-3">
-                <label for="streakName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="streakName" placeholder="Enter streak name">
-            </div>
-            <div class="mb-3">
-                <label for="streakDescription" class="form-label">Description</label>
-                <textarea class="form-control" id="streakDescription" rows="3" placeholder="Describe the streak"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+           
         </form>
     </div>
 
-    
     <div id="moodSidebar" class="sidebar">
         <a href="#" class="close-btn">&times;</a>
-        <h4>Mood Tracker</h4>
-        <form>
-            <div class="mb-3">
-                <label for="moodDate" class="form-label">Date</label>
-                <input type="date" class="form-control" id="moodDate">
+        <div class="moodtracker">
+            <div class="date-picker">
+                <label for="moodDate">Date:</label>
+                <input type="date" id="moodDate" >
             </div>
-            <div class="mb-3">
-                <label for="moodDescription" class="form-label">Mood</label>
-                <textarea class="form-control" id="moodDescription" rows="3" placeholder="Describe your mood"></textarea>
+            <h4>Your Mood Today</h4>
+            <div class="mood-item">
+                <img src="happy.jpg" alt="Happy Mood">
+                <span>Happy</span>
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
-    </div>
+            <div class="mood-item">
+                <img src="sad.jpg" alt="Sad Mood">
+                <span>Sad</span>
+            </div>
+            <div class="mood-item">
+                <img src="anxious.jpg" alt="Anxious Mood">
+                <span>Anxious</span>
+            </div>
+            <div class="mood-item">
+                <img src="calm.jpg" alt="Calm Mood">
+                <span>Calm</span>
+            </div>
+            <div class="mood-item">
+                <img src="angry.jpg" alt="Angry Mood">
+                <span>Angry</span>
+            </div>
+            <div class="mood-item">
+                <img src="exited.jpg" alt="Excited Mood">
+                <span>Excited</span>
+            </div>
+            <div class="mood-item">
+                <img src="bored.jpg" alt="Bored Mood">
+                <span>Bored</span>
+            </div>
+            <div class="mood-item">
+                <img src="tired.jpg" alt="Tired Mood">z
+                <span>Tired</span>
+            </div>
+            <div class="mood-item">
+                <img src="stressed.jpg" alt="Stressed Mood">
+                <span>Stressed</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">Submit Mood</button>
+        </div>
+
     </main>
 
-
-
-<!-- Blog Section -->
-<section id="blog" class="blog">
-    <h2>Our Latest Blog Posts</h2>
-    <div class="blog-posts">
-        <div class="blog-card">
-            <h3>10 Ways to Manage Stress</h3>
-            <p>Explore effective strategies to manage stress in your daily life.</p>
-            <a href="#">Read More</a>
-        </div>
-        <div class="blog-card">
-            <h3>Understanding Anxiety</h3>
-            <p>Learn about anxiety, its causes, and how to cope with it.</p>
-            <a href="#">Read More</a>
-        </div>
-        <div class="blog-card">
-            <h3>Mental Health Myths</h3>
-            <p>Debunk common myths surrounding mental health.</p>
-            <a href="#">Read More</a>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
-</main>
-
-<!-- Footer Section -->
-<footer>
-<div class="footer-content">
-    <p>&copy; 2024 Mental Health Hub | All Rights Reserved</p>
-    <div class="footer-social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-</div>
-</footer>
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-
